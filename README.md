@@ -1,8 +1,8 @@
 **-- System requirements --**
-mysql-server > 8.0.17-0
-mysql-client > 8.0.17-0
-python 3.+
-setuptools
+- mysql-server > 8.0.17-0
+- mysql-client > 8.0.17-0
+- python 3.+
+- setuptools
 
 
 Kaught
@@ -29,20 +29,14 @@ Description : Well KOrganizer can't work with mysql 8.0+ so I am making this app
 * mysql-client =7.0
 * mysql-server =7.0
 * python = 3.7
-* PyQt5
 
 <br>
 #### Platform
 * Linux distro that can run required packages mysql
-* 
-* 
 
 #### Tools
-* PyQt5 for GUI
-* 
-* 
-* 
-* 
+* tkinter
+ 
 
 #### Known Bugs
 
