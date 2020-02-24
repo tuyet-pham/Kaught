@@ -1,6 +1,6 @@
 **-- System requirements --**
-- mysql-server > 8.0.17-0
-- mysql-client > 8.0.17-0
+- mysql-server 5.7+
+- mysql-client 5.7+
 - python 3.+
 - setuptools
 
