@@ -2,6 +2,7 @@
 import os
 import sys
 sys.path.append('../py')
+sys.path.append('../public')
 from aesthetics import *
 
 class Application(tk.Frame):
@@ -14,6 +15,7 @@ class Application(tk.Frame):
         self.setupUser()
 
     def create_widgets(self):
+        self.klogo = KLogo(self).pack(side=TOP)
         self.exitButton = KButtonLight(self, text="Quit").pack(side=LEFT)
         self.nextButton = KButtonDark(self, text="Next").pack(side=RIGHT)
 

@@ -6,6 +6,7 @@ from tkinter import TOP, LEFT, RIGHT, BOTTOM, RIGHT
 from tkinter import TRUE, FALSE
 from tkinter import Toplevel, Message
 from tkinter import PanedWindow
+from tkinter import PhotoImage
 
 
 class KButtonLight(Button):
@@ -31,3 +32,12 @@ class KButtonDark(Button):
         self['borderwidth'] = 0
         self['highlightthickness'] = 0
         self['pady'] = 5
+
+
+class KLogo(Label):
+    def __init__(self, *args, **kwargs):
+        Label.__init__(self, *args, **kwargs)
+        self["photo"] = PhotoImage(file="kaught_logo300.png")
+        self["image"] = photo
+        self["pady"] = 5
+        self["padx"] = 5
