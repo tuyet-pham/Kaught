@@ -4,32 +4,55 @@ import sys
 sys.path.append('../py')
 from aesthetics import *
 
-class Setup(tk.Frame):
-    def __init__(self, master, width="500", height="600"):
-        super().__init__(master)
-        self.master = master
-        self.pack()
-        self.create_widgets()
-        self.setupUser()
+class Switch(tk.Tk):
+    def __init__(self):
+        tk.Tk.__init__(self)
+        self.title("Kaught1.0 Setup")
+        self.geometry("500x600")
+        self._frame = None
+        self.switch_frame(Setup)
 
-    def create_widgets(self):
+    def switch_frame(self, frame_class):
+        new_frame = frame_class(self)
+        if self._frame is not None:
+            self._frame.destroy()
+        self._frame = new_frame
+        self._frame.pack()
+
+
+class Setup(tk.Frame):
+    def __init__(self, master):
+        tk.Frame.__init__(self, master)
         self.klogo = KLogo(self).pack(side=TOP,pady=20)
 
         self.kaughtM = Text(self, height=15, width=50, relief='flat')
         self.kaughtM.insert(tk.END, kaughtmsg)
         self.kaughtM.pack(side=TOP, fill=Y, pady=20)    
-
-        self.exitButton = KButtonLight(self, text="Quit", command=quit).pack(side=RIGHT, pady=50,padx=2)
-        self.nextButton = KButtonDark(self, text="Next", command=self.setupUser).pack(side=LEFT, pady=50, padx=2)        
-
-
-    def setupUser(self):
-        print("Hey")
+        
+        KButtonDark(self, text="Next", command=lambda: master.switch_frame(Userinfo)).pack(side=LEFT, pady=50, padx=2)
+        KButtonLight(self, text="Quit", command=quit).pack(side=RIGHT, pady=50,padx=2)
 
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    root.title("Kaught1.0 Setup")
-    root.geometry("500x600")
-    app = Setup(master=root)
+class Userinfo(tk.Frame):
+    def __init__(self, master):
+        tk.Frame.__init__(self, master)
+        tk.Label(self, text="User info", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
+        KButtonDark(self, text="Next", command=lambda: master.switch_frame(FinishUser)).pack(side=LEFT, pady=50, padx=2)
+        KButtonLight(self, text="Quit", command=quit).pack(side=RIGHT, pady=50,padx=2)
+        KButtonLight(self, text="Back", command=lambda: master.switch_frame(Setup)).pack(side=RIGHT, pady=50,padx=2)
+
+
+class FinishUser(tk.Frame):
+    def __init__(self, master):
+        tk.Frame.__init__(self, master)
+        tk.Label(self, text="Finish User", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
+        KButtonDark(self, text="Finish!", command=quit).pack(side=LEFT, pady=50, padx=2)
+        KButtonLight(self, text="Quit", command=quit).pack(side=RIGHT, pady=50,padx=2)
+        KButtonLight(self, text="Back", command=lambda: master.switch_frame(Userinfo)).pack(side=RIGHT, pady=50,padx=2)
+
+
+
+
+if __name__ == "__main__":    
+    app = Switch()
     app.mainloop()
