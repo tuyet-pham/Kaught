@@ -3,6 +3,7 @@ import os
 import sys
 sys.path.append('../py')
 from aesthetics import *
+from tkinter import PhotoImage
 
 class Switch(tk.Tk):
     def __init__(self):
@@ -36,7 +37,14 @@ class Setup(tk.Frame):
 class Userinfo(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
-        tk.Label(self, text="User info", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
+        tk.Label(self, text="User info", font=('Helvetica', 20)).pack(side="top", fill="x", pady=10)
+
+        Label(self, text="Username").pack(side=LEFT, pady=10, padx=10)
+        self.username = Entry(self, bd=0, relief='flat', selectborderwidth=0).pack(side=RIGHT, pady=10, padx=10)
+        
+        Label(self, text="Password").pack(side=LEFT, pady=10, padx=10)
+        self.password = Entry(self, bd=0, relief='flat', selectborderwidth=0).pack(side=RIGHT, pady=10, padx=10)
+        
         KButtonDark(self, text="Next", command=lambda: master.switch_frame(FinishUser)).pack(side=LEFT, pady=50, padx=2)
         KButtonLight(self, text="Quit", command=quit).pack(side=RIGHT, pady=50,padx=2)
         KButtonLight(self, text="Back", command=lambda: master.switch_frame(Setup)).pack(side=RIGHT, pady=50,padx=2)
