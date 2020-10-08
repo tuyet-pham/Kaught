@@ -50,7 +50,7 @@ class KButtonDark(Button):
 class KLogo(Label):
     def __init__(self, *args, **kwargs):
         Label.__init__(self, *args, **kwargs)
-        self.photo = PhotoImage(file="../public/kaught_logo200.png")
+        self.photo = PhotoImage(file="./public/kaught_logo200.png")
         self['image'] = self.photo
 
 

@@ -1,15 +1,16 @@
 #!usr/bin/env python3
 import os
 import sys
-sys.path.append('../py')
+sys.path.append('./py')
 from aesthetics import *
 from tkinter import PhotoImage
 
+# ----------- Important switch class for ALL frames ----------- #
 class Switch(tk.Tk):
     def __init__(self):
         tk.Tk.__init__(self)
         self.title("Kaught1.0 Setup")
-        self.geometry("500x600")
+        self.geometry("550x600")
         self._frame = None
         self.switch_frame(Setup)
 
@@ -21,19 +22,22 @@ class Switch(tk.Tk):
         self._frame.pack()
 
 
+# -----------  ----------- #
 class Setup(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
         self.klogo = KLogo(self).pack(side=TOP,pady=20)
 
-        self.kaughtM = Text(self, height=15, width=50, relief='flat')
+        self.kaughtM = Text(self, height=15, width=53, relief='flat')
         self.kaughtM.insert(tk.END, kaughtmsg)
-        self.kaughtM.pack(side=TOP, fill=Y, pady=20)    
+        self.kaughtM.config(state='disabled')
+        self.kaughtM.pack(side=TOP, fill=Y, pady=20)
         
         KButtonDark(self, text="Next", command=lambda: master.switch_frame(Userinfo)).pack(side=LEFT, pady=50, padx=2)
         KButtonLight(self, text="Quit", command=quit).pack(side=RIGHT, pady=50,padx=2)
 
 
+# -----------  ----------- #
 class Userinfo(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
@@ -50,6 +54,7 @@ class Userinfo(tk.Frame):
         KButtonLight(self, text="Back", command=lambda: master.switch_frame(Setup)).pack(side=RIGHT, pady=50,padx=2)
 
 
+# -----------  ----------- #
 class FinishUser(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
