@@ -54,3 +54,10 @@ class KLogo(Label):
         self['image'] = self.photo
 
 
+
+
+class KLogo2(Label):
+    def __init__(self, *args, **kwargs):
+        Label.__init__(self, *args, **kwargs)
+        self.photo = PhotoImage(file="./public/kaught_logo400.png")
+        self['image'] = self.photo
