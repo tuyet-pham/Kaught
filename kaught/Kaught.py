@@ -44,9 +44,13 @@ class EntryKaught(tk.Frame):
 class MainMenu(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
-        tk.Label(self, text="What to do now?", font=('Helvetica', 18, "bold")).pack(side="top", fill="x", pady=5)
-        KButtonDark(self, text="Finish!", command=quit).pack(side=LEFT, padx=10, fill="x")
-        KButtonLight(self, text="Back", command=lambda: master.switch_frame(EntryKaught)).pack(side=RIGHT, pady=50,padx=10, fill="x")
+        tk.Label(self, text="What to do now?", font=('Helvetica', 18, "bold")).pack(side=TOP, fill="x", pady=5)
+        
+        KButtonDark(self, text="Flash Cards", command=lambda: master.switch_frame(EntryKaught)).pack(side=TOP, pady=5, fill=tk.X, expand=FALSE)
+        KButtonDark(self, text="Code Snippets", command=lambda: master.switch_frame(EntryKaught)).pack(side=TOP, pady=5, fill=tk.X)
+        KButtonDark(self, text="Code Snippets", command=lambda: master.switch_frame(EntryKaught)).pack(side=TOP, pady=5, fill=tk.X)
+        KButtonLight(self, text="Back", command=lambda: master.switch_frame(EntryKaught)).pack(side=TOP, pady=5, fill=tk.X)
+
 
 
 # ----------- About App ----------- #
@@ -60,7 +64,7 @@ class About(tk.Frame):
         self.kaughtM.config(state='disabled')
         self.kaughtM.pack(side=TOP, fill=Y, pady=20)
         
-        KButtonDark(self, text="Back", command=lambda: master.switch_frame(EntryKaught)).pack(side=LEFT, pady=50, padx=2)
+        KButtonDark(self, text="Back", command=lambda: master.switch_frame(EntryKaught)).pack(side=RIGHT, pady=20, padx=2)
 
 
 

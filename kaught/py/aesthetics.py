@@ -30,7 +30,7 @@ class KButtonLight(Button):
         self['bg'] = 'whitesmoke'
         self['fg'] = 'black'
         self['relief'] = 'flat'
-        self['width'] = 15
+        self['width'] = 30
         self['borderwidth'] = 0
         self['highlightthickness'] = 0
         self['activebackground'] = 'gray24'
@@ -42,7 +42,7 @@ class KButtonDark(Button):
         self['bg'] = 'gray24'
         self['fg'] = 'white'
         self['relief'] = 'flat'
-        self['width'] = 15
+        self['width'] = 30
         self['borderwidth'] = 0
         self['highlightthickness'] = 0
 
