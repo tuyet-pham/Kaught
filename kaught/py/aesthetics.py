@@ -7,7 +7,7 @@ from tkinter import TRUE, FALSE
 from tkinter import Toplevel, Message
 from tkinter import PanedWindow
 from tkinter import Text, Scrollbar
-from tkinter import PhotoImage
+from tkinter import PhotoImage, Menu, colorchooser
 
 kaughtmsg = """
 Hello user!
@@ -27,20 +27,15 @@ Let me know if any improvements can be made.
 class KButtonLight(Button):
     def __init__(self, *args, **kwargs):
         Button.__init__(self, *args, **kwargs)
-        self['bg'] = 'whitesmoke'
-        self['fg'] = 'black'
         self['relief'] = 'flat'
         self['width'] = 30
         self['borderwidth'] = 0
         self['highlightthickness'] = 0
-        self['activebackground'] = 'gray24'
-        self['activeforeground'] = 'whitesmoke'
+
 
 class KButtonDark(Button):
     def __init__(self, *args, **kwargs):
         Button.__init__(self, *args, **kwargs)
-        self['bg'] = 'gray24'
-        self['fg'] = 'white'
         self['relief'] = 'flat'
         self['width'] = 30
         self['borderwidth'] = 0
