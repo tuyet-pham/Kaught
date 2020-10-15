@@ -14,11 +14,11 @@ Description : Just a lot of utilities items for myself.
 - setuptools
 
 #### Features ####
-- [] Notes : Just Jotting down some notes
-- [] To-dos : A To Do list would be nice
-- [] Flashcards : Learning util
-- [] Calendar : Hopefully to sync with UNT canvas
-- [] Snippets : Code saver like cacher? 
+- [x] Notes : Just Jotting down some notes - First
+- [ ] To-dos : A To Do list would be nice
+- [ ] Flashcards : Learning util
+- [ ] Calendar : Hopefully to sync with UNT canvas
+- [ ] Snippets : Code saver like cacher? 
 
 <br>
 
