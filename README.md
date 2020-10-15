@@ -1,8 +1,3 @@
-**-- System requirements --**
-- mysql-server 5.7+
-- mysql-client 5.7+
-- python 3.+
-- setuptools
 
 
 Kaught
@@ -10,35 +5,41 @@ Kaught
 ``````
 Current Version - 1.0
 Dev : Tuyet Pham
-Description : Well KOrganizer can't work with mysql 8.0+ so I am making this app so I can keep track of my calendar & task.
+Description : Just a lot of utilities items for myself.
 ``````
+**System requirements**
+- mysql-server 5.7+
+- mysql-client 5.7+
+- python 3.+
+- setuptools
 
-#### Current features
-* Notes
-* To-dos
-* Weekly overview
-
+#### Features ####
+<br>
+[] Notes : Just Jotting down some notes
+[] To-dos : A To Do list would be nice
+[] Flashcards : Learning util
+[] Calendar : Hopefully to sync with UNT canvas
+[] Snippets : Code saver like cacher? 
 
 <br>
-#### Language
+
+#### Language ####
 * python
-
+* sql
 
 <br>
-####  Packages
+
+####  Packages ####
 * mysql-client =7.0
 * mysql-server =7.0
 * python = 3.7
 
 <br>
-#### Platform
+
+#### Platform ####
 * Linux distro that can run required packages mysql
 
-#### Tools
+#### Tools ####
 * tkinter
- 
 
-#### Known Bugs
-
-
-
+#### Known Bugs ####
