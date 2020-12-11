@@ -12,7 +12,7 @@ from tkinter.filedialog import askopenfilename, Radiobutton, LabelFrame
 
 
 
-class RButtonDark(Button):
+class KButtonDark(Button):
     def __init__(self, *args, **kwargs):
         Button.__init__(self, *args, **kwargs)
         self['relief'] = 'flat'
