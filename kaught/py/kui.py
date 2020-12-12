@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import tkinter as tk
 from tkinter import Label, Entry
 from tkinter import Frame, Button, Grid
